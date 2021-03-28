@@ -1,0 +1,16 @@
+    <form method="post" class="formulario" enctype="multipart/form-data">
+        <label class="formLabel">Escolha uma imagem de seu dispositivo:</label>
+        <label for="enviar-imagem">
+            <div class="botao-enviar">
+                <i class="fa fa-upload" aria-hidden="true"> Escolher</i>
+            </div>
+        </label>
+        <input type="file" name="imagem" id="enviar-imagem">
+        <div id="imgprev"></div>
+        <label for="local" class="formLabel">Digite um local:</label>
+        <input type="text" name="local" id="local" placeholder="Ex: São Paulo">
+        <label for="descricao" class="formLabel">Digite uma descrição:</label>
+        <textarea name="descricao" id="descricao" cols="50" rows="7"
+            placeholder="Ex: #tbt com amigos :)"></textarea>
+        <input type="submit" value="Publicar" formaction="publicar" class="submitBtn">
+    </form>
