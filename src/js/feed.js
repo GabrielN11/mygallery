@@ -24,13 +24,16 @@ function paginarFeed(arrFeed) {
     if (arrFeed.length > 10) {
         const arrlength = arrFeed.length
         const matriz = []
-        for (let i = 0; i < arrlength; i += 10) {
+        const ultimaPagina = arrlength % 10
+        const arrUltimaPagina = arrFeed.slice(0, ultimaPagina)
+        arrFeed.splice(0, ultimaPagina)
+        matriz.push(arrUltimaPagina)
+        while(arrFeed.length != 0) {
             let arrde10 = []
             arrde10 = arrFeed.slice(0, 10)
             arrFeed.splice(0, 10)
             matriz.push(arrde10)
         }
-        arrFeed.length > 0 ? matriz.push(arrFeed) : false
         for (let i = 0; i < matriz.length; i++) {
             const linkpagina = $('<a>').html(parseInt(i + 1))
             arrPaginas.push(linkpagina)
